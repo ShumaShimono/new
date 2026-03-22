@@ -1,0 +1,86 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>野球サイト</title>
+  </head>
+
+  <body style="
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0b1f3a, #1e3a5f);
+  ">
+
+    <Header />
+
+    <!-- ヒーロー -->
+    <section style="
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+    ">
+      <h1 style="font-size:40px;">⚾ Baseball World</h1>
+      <p>野球の魅力を体験しよう</p>
+    </section>
+
+    <!-- コンテンツ -->
+    <main style="padding:30px;">
+
+      <h2 style="color:white; text-align:center; margin-bottom:30px;">
+        コンテンツ
+      </h2>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+
+        <!-- 選手紹介 -->
+        <a href="/players" style="text-decoration:none; color:inherit;">
+          <div style="
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            width:250px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            transition:0.3s;
+          "
+          onmouseover="this.style.transform='scale(1.05)'"
+          onmouseout="this.style.transform='scale(1)'"
+          >
+            <img src="https://via.placeholder.com/250x150"
+                 style="width:100%; border-radius:10px; margin-bottom:10px;" />
+            <h3>選手紹介</h3>
+            <p>有名な野球選手を紹介します</p>
+          </div>
+        </a>
+
+        <!-- About -->
+        <a href="/about" style="text-decoration:none; color:inherit;">
+          <div style="
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            width:250px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            transition:0.3s;
+          "
+          onmouseover="this.style.transform='scale(1.05)'"
+          onmouseout="this.style.transform='scale(1)'"
+          >
+            <img src="https://via.placeholder.com/250x150"
+                 style="width:100%; border-radius:10px; margin-bottom:10px;" />
+            <h3>About</h3>
+            <p>このサイトについて</p>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

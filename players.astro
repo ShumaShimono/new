@@ -1,0 +1,80 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const players = [
+  {
+    name: "山田哲人",
+    team: "スワローズ",
+    position: "内野手",
+     link: "/players/yamada"
+  },
+  {
+    name: "青木宣親",
+    team: "元マリナーズ",
+    position: "外野手",
+        link: "/players/aoki"
+  },
+  {
+    name: "岩村明憲",
+    team: "元レイズ",
+    position: "内野手",
+        link: "/players/iwamura"
+  }
+];
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>選手の紹介</title>
+  </head>
+
+  <body style="
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0b1f3a, #1e3a5f);
+  color:#333;
+">
+    
+    <Header />
+
+    <main style="padding:30px;">
+      <h1><h1 style="text-align:center; margin-bottom:30px;">⚾ 選手紹介</h1></h1>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+        {players.map(player => (
+  <a href={player.link} style="text-decoration:none; color:inherit;">
+    
+    <div style="
+      background:white;
+      padding:20px;
+      border-radius:15px;
+      width:250px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      transition:0.3s;
+    "
+    onmouseover="this.style.transform='translateY(-10px)'"
+    onmouseout="this.style.transform='translateY(0)'"
+    >
+
+      <img src="https://via.placeholder.com/250x150"
+           style="width:100%; border-radius:10px; margin-bottom:10px;" />
+
+      <h2>{player.name}</h2>
+      <p>チーム：{player.team}</p>
+      <p>ポジション：{player.position}</p>
+
+    </div>
+
+  </a>
+))}
+
+      </div>
+    </main>
+
+    <Footer />
+
+  </body>
+</html>
